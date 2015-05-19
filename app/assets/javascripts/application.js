@@ -16,6 +16,7 @@
 //= require_tree .
 
 $(document).ready(function (){
+
   $('.new-idea-button').click(function (event){
     $('.new-idea-form').toggleClass("hidden");
   });
