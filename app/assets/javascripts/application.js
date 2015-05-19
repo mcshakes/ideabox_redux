@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function (){
+  $('.new-idea-button').click(function (event){
+    $('.new-idea-form').toggleClass("hidden");
+  });
+
+  $(".new-idea-form").on("ajax:success", function(event, data, status, xhr){
+    $(".ideas").append("<li>" + data.title + "</li>")
+    $(".ideas").append("<li>" + data.body + "</li>")
+  });
+
+
+
+});

@@ -40,5 +40,6 @@ group :development, :test do
   gem 'capybara'
   gem 'launchy'
   gem 'spring'
+  gem 'pry'
   gem 'mocha'
 end
