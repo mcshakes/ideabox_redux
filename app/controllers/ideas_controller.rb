@@ -16,9 +16,10 @@ class IdeasController < ApplicationController
   end
 
   def create
-    @idea = Idea.create(idea_params)
+    respond_with Idea.create(idea_params)
 
-    render json: @idea
+    # @idea = Idea.create(idea_params)
+    # render json: @idea
   end
 
   def destroy

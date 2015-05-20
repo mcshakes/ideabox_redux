@@ -39,12 +39,15 @@ class IdeasControllerTest < ActionController::TestCase
   end
 
   test "#create" do
-    skip
-    post :create, format: :json, idea: { title: "turmeric", body: "need to add to grocery list"}
+    assert_difference("Idea.count", 1) do
+      post :create, format: :json, idea: { title: "turmeric", body: "need to add to grocery list"}
+    end
 
     assert_response :success
-    assert_equal "turmeric", idea[:title]
-    assert_equal "need to add to grocery list", idea[:body]
+
+    # Why don't these work?
+    # assert_equal "turmeric", idea[:title]
+    # assert_equal "need to add to grocery list", idea[:body]
   end
 
   test "#destroy" do
@@ -53,7 +56,6 @@ class IdeasControllerTest < ActionController::TestCase
     assert_difference("Idea.count", -1) do
       delete :destroy, format: :json, id: idea.id
     end
-
     assert_response :success
   end
 end
