@@ -4,6 +4,7 @@ class IdeaCreationTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   test "user sees greeting banner" do
+    skip
     visit root_path
     within(".banner") do
       assert page.has_content?("Welcome to IdeaBox - The Sequel!")
@@ -14,11 +15,13 @@ class IdeaCreationTest < ActionDispatch::IntegrationTest
   end
 
   test "user doesn't see the new form until clicking" do
+    skip
     visit root_path
     assert page.has_css?(".new-idea-form.hidden")
   end
 
   test "user can click to add idea" do
+    skip
     visit root_path
     click_link_or_button("Add New Idea")
     assert page.has_content?("Title")
@@ -27,6 +30,7 @@ class IdeaCreationTest < ActionDispatch::IntegrationTest
   end
 
   test "user can create an idea" do
+    skip
     visit root_path
     click_link_or_button("Add New Idea")
 
