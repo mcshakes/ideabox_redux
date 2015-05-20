@@ -1,14 +1,29 @@
 class IdeasController < ApplicationController
+  respond_to :json, :html
 
   def index
-    # @ideas = Idea.all
-    @idea = Idea.new
+    # @idea = Idea.new
+    respond_with Idea.all
+
+  end
+
+  def show
+    respond_with Idea.find_by(id: params[:id])
+  end
+
+  def update
+    respond_with Idea.update(params[:id], idea_params)
   end
 
   def create
-    @idea = Idea.create(idea_params)
-    # binding.pry
-    render json: @idea
+    respond_with Idea.create(idea_params)
+
+    # @idea = Idea.create(idea_params)
+    # render json: @idea
+  end
+
+  def destroy
+    respond_with Idea.delete(params[:id])
   end
 
   private

@@ -17,13 +17,25 @@
 
 $(document).ready(function (){
 
+  // fetchIdeas();
+  //
+  // function fetchIdeas() {
+  //
+  // }
+
+  // function renderIdea(data, id) {
+  //   return $("<div class='ideas' data-id ='" + id +  "'>" +
+  //       '<h3>' + data.title + '</h3>'
+  //   '</div>');
+  // }
+
   $('.new-idea-button').click(function (event){
     $('.new-idea-form').toggleClass("hidden");
   });
 
   $(".new-idea-form").on("ajax:success", function(event, data, status, xhr){
-    $(".ideas").append("<li>" + data.title + "</li>")
-    $(".ideas").append("<li>" + data.body + "</li>")
+    $(".ideas").append("<li> Title: " + data.title + " " + "Description: " + data.body + "</li>")
+    // $(".ideas").append("<li> Description: " + data.body + "</li>")
   });
 
 
