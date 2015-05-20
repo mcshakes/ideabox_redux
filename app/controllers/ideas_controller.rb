@@ -17,8 +17,12 @@ class IdeasController < ApplicationController
 
   def create
     @idea = Idea.create(idea_params)
-    # binding.pry
+
     render json: @idea
+  end
+
+  def destroy
+    respond_with Idea.delete(params[:id])
   end
 
   private

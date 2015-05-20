@@ -46,4 +46,14 @@ class IdeasControllerTest < ActionController::TestCase
     assert_equal "turmeric", idea[:title]
     assert_equal "need to add to grocery list", idea[:body]
   end
+
+  test "#destroy" do
+    idea = Idea.create(title: "forget", body: "ideas")
+
+    assert_difference("Idea.count", -1) do
+      delete :destroy, format: :json, id: idea.id
+    end
+
+    assert_response :success
+  end
 end
