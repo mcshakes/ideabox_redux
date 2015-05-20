@@ -7,6 +7,14 @@ class IdeasController < ApplicationController
 
   end
 
+  def show
+    respond_with Idea.find_by(id: params[:id])
+  end
+
+  def update
+    respond_with Idea.update(params[:id], idea_params)
+  end
+
   def create
     @idea = Idea.create(idea_params)
     # binding.pry
