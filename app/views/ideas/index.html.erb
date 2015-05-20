@@ -11,13 +11,15 @@
 
 <button type="button" class="new-idea-button">Add New Idea</button>
 
-<div class="new-idea-form hidden">
+<div class="container">
+  <div class="new-idea-form hidden">
     <h3>Add Idea</h3>
     <%= form_for @idea, remote: true do |f| %>
       <%= f.label :title %>
       <%= f.text_field :title, autofocus: true %>
       <%= f.label :body %>
       <%= f.text_field :body %>
-      <%= f.submit "Create" %>
+      <%= f.submit "Create", id %>
     <% end %>
+  </div>
 </div>

@@ -4,7 +4,6 @@ class IdeasController < ApplicationController
   def index
     @idea = Idea.new
     respond_with Idea.all
-
   end
 
   def show
