@@ -2,9 +2,8 @@ class IdeasController < ApplicationController
   respond_to :json, :html
 
   def index
-    # @idea = Idea.new
+    @idea = Idea.new
     respond_with Idea.all
-
   end
 
   def show
