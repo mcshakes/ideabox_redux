@@ -18,7 +18,7 @@
 
 $(document).ready(function (){
 
-  var $ideas = $('.ideas');  // grabbing Ideas div. needs to be inside here so page loads
+  var $ideas = $('.ideas');  
   var $updateButton = $('.update-idea-button');
 
   var ideaRepository = {
@@ -55,9 +55,11 @@ $(document).ready(function (){
       alert("who");
     });
 
+    //  have to put the button within the addIdea, so when page loads,
+    //  it brings in the button as well. A part of the idea object
+
     $ideas.append($ideaElement);
   };
-
 
 
   fetchIdeas();
