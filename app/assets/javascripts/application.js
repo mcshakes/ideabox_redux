@@ -18,17 +18,6 @@
 
 $(document).ready(function (){
 
-  // fetchIdeas();
-  //
-  // function fetchIdeas() {
-  //
-  // }
-
-  // function renderIdea(data, id) {
-  //   return $("<div class='ideas' data-id ='" + id +  "'>" +
-  //       '<h3>' + data.title + '</h3>'
-  //   '</div>');
-  // }
 
   $('.new-idea-button').click(function (event){
     $('.new-idea-form').toggleClass("hidden");
