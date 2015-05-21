@@ -36,23 +36,29 @@ $(document).ready(function (){
   };
 
   var fetchIdeas = function () {
-    ideaRepository.all().then(function (ideas) { ideas.forEach(addIdea); });
+    ideaRepository.all()
+    .then(function (ideas) { ideas.forEach(addIdea); });
   };
 
+  // post to the database then actually append to the DOM
+
   var addIdea = function (idea) {
-    $ideas.append(['<div class="idea" id= "" + idea.id>',
+    var $ideaElement = $(['<div class="idea" id="', idea.id, '">',
                     '<h4>', idea.title, '</h4>',
                     '<p>', idea.body, '</p>',
                     '<button class="update-idea-button">Update</button>',
                     '</div>'
                   ].join(''));
+
+    $ideaElement.find('.update-idea-button').click(function (e){
+      e.preventDefault();
+      alert("who");
+    });
+
+    $ideas.append($ideaElement);
   };
 
-  $(".update-idea-button").click(function (e){
-    e.preventDefault();
-    alert("who");
-    // var $id = $(this).parent().attr("id")
-  });
+
 
   fetchIdeas();
 
