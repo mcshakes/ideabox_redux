@@ -5,15 +5,11 @@
 
   <div class="row">
     <h2>Your Bright Ideas</h2>
-    <div class="ideas"></div>
-      <!-- <ul class="ideas">
-      </ul> -->
-
-  </div>
+    <div class="six columns ideas"></div>
 
   <button type="button" class="new-idea-button">Add New Idea</button>
 
-    <div class="new-idea-form hidden">
+    <div class="five columns new-idea-form hidden">
       <h3>Add Idea</h3>
       <%= form_for @idea, remote: true do |f| %>
         <%= f.label :title %>
@@ -23,4 +19,5 @@
         <%= f.submit "Create", class: "creator" %>
       <% end %>
     </div>
+  </div>
 </div>
