@@ -3,7 +3,13 @@ class IdeasController < ApplicationController
 
   def index
     @idea = Idea.new
+    
     respond_with Idea.all
+
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @ideas }
+    #  end
   end
 
   def show
