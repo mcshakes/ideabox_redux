@@ -1,25 +1,26 @@
-<div class="banner">
-  <h2>Welcome to IdeaBox - The Sequel!</h2>
-</div>
-
-<div class="collection">
-  <h2>Your Bright Ideas</h2>
-
-  <ul class="ideas">
-  </ul>
-</div>
-
-<button type="button" class="new-idea-button">Add New Idea</button>
-
 <div class="container">
-  <div class="new-idea-form hidden">
-    <h3>Add Idea</h3>
-    <%= form_for @idea, remote: true do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title, autofocus: true %>
-      <%= f.label :body %>
-      <%= f.text_field :body %><br>
-      <%= f.submit "Create", class: "creator" %>
-    <% end %>
+  <div class="banner">
+    <h2>IdeaBox - The Sequel!</h2>
   </div>
+
+  <div class="row">
+    <h2>Your Bright Ideas</h2>
+    <div class="ideas"></div>
+      <!-- <ul class="ideas">
+      </ul> -->
+
+  </div>
+
+  <button type="button" class="new-idea-button">Add New Idea</button>
+
+    <div class="new-idea-form hidden">
+      <h3>Add Idea</h3>
+      <%= form_for @idea, remote: true do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true %>
+        <%= f.label :body %>
+        <%= f.text_field :body %><br>
+        <%= f.submit "Create", class: "creator" %>
+      <% end %>
+    </div>
 </div>
